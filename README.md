@@ -7,7 +7,7 @@ Modelling and methodology
 
 - I modelled this pension company as having:
   - Initial assets A_0
-  - Liability payments L at the end of each year over N-year long investment futures (so at 1 year, 2 years, 3 years, .... ,     N-1 years,  N years after the start of each investment future)
+  - Constant liability payments L at the end of each year over N-year long investment futures (so at 1 year, 2 years, 3          years, .... ,     N-1 years,  N years after the start of each investment future)
   - A proportion of assets w remaining at the end of each year that are invested in equities (where the remaining proportion     of the assets, 1-w, are invested in bonds)
   - Bonds having a yearly return given by a normal distribution with mean mu_B and standard deviation sigma_B
   - Equities having a yearly return given by a shifted lognormal distribution due to geometric Brownian motion. This             lognormal distribution inputs the standard normal distribution Z (mean 0, variance 1), the annual drift parameter mu_E       and annual volatility parameter sigma_E. 
