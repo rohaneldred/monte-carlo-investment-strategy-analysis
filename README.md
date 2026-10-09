@@ -7,21 +7,21 @@ Modelling and methodology
 
 I modelled this pension company as having:
   - Initial assets A_0
-  Liability payments L at the end of each year over N-year long investment futures (so at 1 year, 2 years, 3 years, .... ,     N-1 years,  N years after the start of each investment future)
-  A proportion of assets w remaining at the end of each year that are invested in equities (where the remaining proportion     of the assets, 1-w, are invested in bonds)
-  Bonds having a yearly return given by a normal distribution with mean mu_B and standard deviation sigma_B
-  Equities having a yearly return given by a shifted lognormal distribution due to geometric Brownian motion. This lognormal   distribution inputs the standard normal distribution Z (mean 0, variance 1), the annual drift parameter mu_E and annual      volatility parameter sigma_E. 
-  A liability discount rate r. This is the yearly fractional increase in the amount of money that would be worth the same      amount (e.g. for my initial value of r, r = 0.04, this means £100 now would have the same value as £104 in a year). This     means, since the yearly liability payments are constant (in terms of £), at a given time future liabilities are worth less   than present liabilities.
+  - Liability payments L at the end of each year over N-year long investment futures (so at 1 year, 2 years, 3 years, .... ,     N-1 years,  N years after the start of each investment future)
+  - A proportion of assets w remaining at the end of each year that are invested in equities (where the remaining proportion     of the assets, 1-w, are invested in bonds)
+  - Bonds having a yearly return given by a normal distribution with mean mu_B and standard deviation sigma_B
+  - Equities having a yearly return given by a shifted lognormal distribution due to geometric Brownian motion. This             lognormal distribution inputs the standard normal distribution Z (mean 0, variance 1), the annual drift parameter mu_E       and annual volatility parameter sigma_E. 
+  - A liability discount rate r. This is the yearly fractional increase in the amount of money that would be worth the same      amount (e.g. for my initial value of r, r = 0.04, this means £100 now would have the same value as £104 in a year). This     means, since the yearly liability payments are constant (in terms of £), at a given time future liabilities are worth        less than present liabilities.
 N, L, mu_B, mu_E, sigma_B, sigma_E were kept constant. Later on, w, A_0 and r were changed. Here are the initial values used of all of these quantities:
-  N = 20
-  A_0 = £80,000,000
-  L = £5,000,000
-  w = 0.2
-  mu_B = 0.035
-  sigma_B = 0.05
-  mu_E = 0.07
-  sigma_E = 0.18
-  r = 0.04
+  - N = 20
+  - A_0 = £80,000,000
+  - L = £5,000,000
+  - w = 0.2
+  - mu_B = 0.035
+  - sigma_B = 0.05
+  - mu_E = 0.07
+  - sigma_E = 0.18
+  - r = 0.04
 In other words, each year the assets were multiplied by 1 + the overall return (calculated from the equity and bond returns), then L was taken off. The surplus for a given year was calculated by subtracting the sum of the present values of all future liabilities payments from the calculated assets value for that year.  
 In some investment futures, after a few years with low or negative returns, the assets became less than L before L was taken off. If this happened, the assets were treated as being 0 for that year and all subsequent years, and the surplus for each subsequent year was just calculated using the formula:
   Surplus = -(Number of £ of past unpaid payments (not taking into account present value) + present value of future payments)
