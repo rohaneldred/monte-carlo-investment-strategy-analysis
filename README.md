@@ -24,7 +24,7 @@ Modelling and methodology
   - r = 0.04
 - In other words, each year the assets were multiplied by 1 + the overall return (calculated from the equity and bond returns), then L was taken off. The surplus for a given year was calculated by subtracting the sum of the present values of all future liabilities payments from the calculated assets value for that year.  
 - In some investment futures, after a few years with low or negative returns, the assets became less than L before L was taken off. If this happened, the assets were treated as being 0 for that year and all subsequent years, and the surplus for each subsequent year was just calculated using the formula:
- - Surplus = -(Number of £ of past unpaid payments (not taking into account present value) + present value of future payments)
+  - Surplus = -(Number of £ of past unpaid payments (not taking into account present value) + present value of future          payments)
 
 Plotting a graph of investment futures and undertaking Monte Carlo simulation
 
